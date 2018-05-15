@@ -1,0 +1,18 @@
+{
+  "name": "solidity-crowdfunder",
+  "version": "0.5.0",
+  "description": "\"Crowdfunding is better on the blockchain\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Isaac Burbank",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^6.0.1",
+    "ganache-cli": "^6.1.0",
+    "mocha": "^5.1.1",
+    "solc": "^0.4.23",
+    "web3": "^1.0.0-beta.26"
+  }
+}
