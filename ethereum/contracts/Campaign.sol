@@ -20,7 +20,7 @@ contract Campaign {
         string description;
         uint value;
         address recipient;
-        uint32 approvalCount;
+        uint64 approvalCount;
         bool complete;
         mapping(address => bool) approvals;
     }
@@ -28,7 +28,7 @@ contract Campaign {
     Request[] public requests;
     address public manager;
     uint public minimumContribution;
-    uint public approversCount;
+    uint64 public approversCount;
     mapping(address => bool) public approvers;
     
     constructor(uint minimum, address creator) public {
@@ -63,7 +63,7 @@ contract Campaign {
         requests.push(newRequest);
     }
     
-    function approveRequest(uint32 index) public {
+    function approveRequest(uint64 index) public {
         Request storage currentRequest = requests[index];
         
         require(approvers[msg.sender]);
@@ -73,7 +73,7 @@ contract Campaign {
         currentRequest.approvalCount++;
     }
     
-    function finalizeRequest(uint32 index) public restricted {
+    function finalizeRequest(uint64 index) public restricted {
         Request storage currentRequest = requests[index];
         
         require(!currentRequest.complete);
